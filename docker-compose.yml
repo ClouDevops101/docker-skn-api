@@ -1,0 +1,12 @@
+web:
+  build: .
+  command: python -u app.py
+  #command: python -u mongo-rest-api.py
+  ports:
+    - "5000:5000"
+  links:
+    - db
+db:
+  image: mongo:3.0.2
+  expose:
+    - 27017
